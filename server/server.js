@@ -22,6 +22,16 @@ io.on('connection', (socket) => {
 	// prints when a new user connect
 	console.log('New user connected');
 
+	socket.emit('newMessage', {
+		from: 'Renato',
+		text: 'This is my Chat',
+		createAt: '5pm'
+	});
+
+	socket.on('createMessage', (message) => {
+		console.log('createMessage', message);
+	})
+
 	// detects when a user disconnects
 	socket.on('disconnect', () => {
 		console.log('Client disconnected.');
