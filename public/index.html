@@ -5,6 +5,27 @@
 	<title></title>
 </head>
 <body>
- <p>Welcome to chat app</p>
+ <p>A Beatriz é parva =)</p>
+
+ <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+
+ <script type="text/javascript">
+ 	// to begin using socket.io
+ 	var socket = io();
+
+ 	// used to detect when a user connects
+ 	socket.on('connect', () => {
+ 		console.log('Connected to server.');
+
+ 	});
+
+ 	// used to detect when a user disconnects
+ 	socket.on('disconnect', () => {
+ 		console.log('Disconnected from server.');
+
+ 	});
+
+ </script>
+
 </body>
 </html>
