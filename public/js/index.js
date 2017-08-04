@@ -4,11 +4,7 @@ var socket = io();
 // used to detect when a user connects
 socket.on('connect', function() {
 	console.log('Connected to server.');
-
-	socket.emit('createMessage', {
-		from: 'yourMom@isdumb.com',
-		text: 'the email speaks for itself'
-	})
+	
 });
 
 // used to detect when a user disconnects
