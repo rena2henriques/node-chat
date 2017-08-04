@@ -4,7 +4,7 @@ var socket = io();
 // used to detect when a user connects
 socket.on('connect', function() {
 	console.log('Connected to server.');
-	
+
 });
 
 // used to detect when a user disconnects
@@ -17,4 +17,11 @@ socket.on('disconnect', function() {
 socket.on('newMessage', function(message) {
 	console.log('New Message', message);
 
+});
+
+socket.emit('createMessage', {
+	from: 'Frank',
+	text: 'Hi'
+}, function(data) {
+	console.log('Got it ', data);
 });
