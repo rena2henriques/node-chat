@@ -10,7 +10,7 @@ const socketIO = require('socket.io');
 // getting the generateMessage function from message.js file
 const {generateMessage} = require('./utils/message.js');
 
-// path to public folder
+ // path to public folder
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
 
