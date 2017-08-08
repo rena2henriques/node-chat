@@ -8,7 +8,7 @@ var app = express();
 const socketIO = require('socket.io');
 
 // getting the generateMessage function from message.js file
-const {generateMessage} = require('./utils/message.js');
+const {generateMessage, generateLocationMessage} = require('./utils/message.js');
 
  // path to public folder
 const publicPath = path.join(__dirname, '../public');
@@ -37,11 +37,10 @@ io.on('connection', (socket) => {
 		io.emit('newMessage', generateMessage(message.from, message.text));
 
 		callback('This is from the server');
-		/*socket.broadcast.emit('newMessage', {
-			from: message.from,
-			text: message.text,
-			createdAt: new Date().getTime()
-		});*/
+	});
+
+	socket.on('createLocationMessage', (coords) => {
+		io.emit('newLocationMessage', generateLocationMessage('Admin', coords.latitude, coords.longitude));
 	});
 
 	// detects when a user disconnects

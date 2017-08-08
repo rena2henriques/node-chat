@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["us\/LE"]); }
+
+__d('PagesBrowserEscapeHatch',['Event','AsyncRequest'],(function a(b,c,d,e,f,g){function h(){}h.LikeButton=function(i,j){c('Event').listen(i,{click:function k(){var l={page_id:j,item_id:'pageInviteEscapeHatch',decline_invite:false};setTimeout(function(){new (c('AsyncRequest'))().setURI('/ajax/pages/browser/page_invite_hide.php').setData(l).send();},1000);}});};f.exports=h;}),null);
