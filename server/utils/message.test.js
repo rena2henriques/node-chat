@@ -21,7 +21,7 @@ describe('generateLocationMessage', () => {
 		var from = 'Mark';
 		var latitude = 15;
 		var longitude = 14;
-		var url = 'https://w ww.google.com/maps?q=15,14';
+		var url = 'https://www.google.com/maps?q=15,14';
 		var locationMessage = generateLocationMessage(from, latitude, longitude);
 
 		expect(locationMessage.createdAt).toBeA('number');
